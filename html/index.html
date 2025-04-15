@@ -1,49 +1,110 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ordem de serviço</title>
+    <title>Ordem de Serviço</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
 </head>
+
 <body>
-    <div class="cntainer">
-        <h1>Orem de serviço Mecanico</h1>
+    <header>
 
-        <form id="formordemServico">
-            <div class="form_section">
+    </header>
+    <main>
+        <div class="container">
+            <h1>Ordem de Serviço Mecânico</h1>
+            <form id="formOrdemServico">
+                <div class="form-section">
 
-                <h2>Dados cliente</h2>
+                    <h2> Dados do Cliente:</h2>
 
-                <div class="form-row">
+                    <div class="form-row">
 
-                    <div class="form_grup">
-                        <label for="nomeCliente">Nome do cliente</label>
-                        <input type="text" id="nomeCliente" required>
+                        <div class="form-group">
+                            <label for="nomeCliente">Nome do Cliente:</label>
+                            <input type="text" id="nomeCliente" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" required
+                                pattern="(\([0-9]{2}\)\s([9]{1})?([0-9]{4}))">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cpf">cpf:</label>
+                            <input type="cpf" id="cpf">
+                        </div>
+
                     </div>
-
-                    <div class="form_grup">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" placeholder="(99) 9999-9999"
-                        pattern="(\([0-9]{2}\)\s([9]{1})?([0-9]{4}))" required>
-                    </div>
-
-                    <div class="form_grup">
-                        <label for="nomeCliente">Nome do cliente</label>
-                        <input type="text" id="nomeCliente" required>
-                    </div>
-
                 </div>
-            </div>
 
-            <div class="form_grup">
-                <label for="veiculoModelo">Modelo do veiculo:</label>
-                <input type="text" id="veiculoModelo" required>
-            </div>
-            
+                <div class="form-section">
+                    <h2>Dados do Veículo</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="veiculoMarca">Marca:</label>
+                            <input type="text" id="veiculoMarca" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="veiculoModelo">Modelo:</label>
+                            <input type="text" id="veiculoModelo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="veiculoAno">Ano:</label>
+                            <input type="number" id="veiculoAno" min="1900" max="2024" required>
+                        </div>
+                    </div>
+                </div>
 
-        </form>
-    </div>
-    
+                <div class="form-section">
+                    <h2>Detalhes do Serviço</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tipoServico">Tipo de Serviço:</label>
+                            <select id="tipoServico" required>
+                                <option value="">Selecione...</option>
+                                <option>Revisão Preventiva</option>
+                                <option>Troca de Óleo</option>
+                                <option>Alinhamento/Balanceamento</option>
+                                <option>Reparos no Motor</option>
+                                <option>Freios</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataServico">Data do Serviço:</label>
+                            <input type="date" id="dataServico" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição do Problema:</label>
+                        <textarea id="descricao" rows="4" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter">
+                        <label for="newsletter">Desejo receber atualizações e promoções por e-mail</label>
+                    </div>
+                </div>
+
+                <button type="submit">Enviar Ordem</button>
+            </form>
+        </div>
+    </main>
+
+
+    <footer>
+    </footer>
+
 </body>
+
 </html>
