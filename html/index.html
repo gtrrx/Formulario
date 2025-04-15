@@ -12,12 +12,27 @@
 
         <form id="formordemServico">
             <div class="form_section">
+
                 <h2>Dados cliente</h2>
+
                 <div class="form-row">
+
                     <div class="form_grup">
                         <label for="nomeCliente">Nome do cliente</label>
                         <input type="text" id="nomeCliente" required>
                     </div>
+
+                    <div class="form_grup">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" placeholder="(99) 9999-9999"
+                        pattern="(\([0-9]{2}\)\s([9]{1})?([0-9]{4}))" required>
+                    </div>
+
+                    <div class="form_grup">
+                        <label for="nomeCliente">Nome do cliente</label>
+                        <input type="text" id="nomeCliente" required>
+                    </div>
+
                 </div>
             </div>
 
@@ -25,6 +40,7 @@
                 <label for="veiculoModelo">Modelo do veiculo:</label>
                 <input type="text" id="veiculoModelo" required>
             </div>
+            
 
         </form>
     </div>
