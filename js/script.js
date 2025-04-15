@@ -4,6 +4,7 @@ document.getElementById('formOrdemServico').addEventListener('submit', function 
     const nomeCliente = document.getElementById('nomeCliente');
     const telefone = document.getElementById('telefone');
     const email = document.getElementById('email');
+    const cpf = document.getElementById('cpf');
     const veiculoAno = document.getElementById('veiculoAno');
 
     let valid = true;
@@ -26,6 +27,12 @@ document.getElementById('formOrdemServico').addEventListener('submit', function 
             valid = false;
         }
     }
+
+    const cpfRegex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+    if (!cpfRegex.test(cpf.value)) {
+        alert('Por favor, insira um CPF em um formato válido');
+        valid = false;
+    } */
 
     if (veiculoAno.value < 1900 || veiculoAno.value > new Date().getFullYear()) {
         alert('Ano do veículo deve ser entre 1900 e o ano atual');

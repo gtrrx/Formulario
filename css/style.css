@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #555555;
     margin: 0;
     padding: 20px;
 }
@@ -8,10 +8,10 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #999999;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -27,21 +27,21 @@ h1 {
 label {
     display: block;
     margin-bottom: 8px;
-    color: #34495e;
+    color: #ffffff;
     font-weight: bold;
 }
 
 input, select, textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid #bdc3c7;
+    border: 2px solid #7c5fff;
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: #3498db;
+    border-color: #0099ff;
     outline: none;
 }
 
@@ -56,7 +56,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 button {
-    background-color: #3498db;
+    background-color: #686868;
     color: white;
     padding: 12px 24px;
     border: none;
@@ -68,7 +68,7 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #4b93f1;
 }
 
 @media (max-width: 768px) {
@@ -78,7 +78,7 @@ button:hover {
 }
 
 .form-section {
-    background-color: #f9f9f9;
+    background-color: #464646;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 20px;
@@ -118,6 +118,6 @@ button:hover {
 .checkbox-group {
     margin: 15px 0;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #838383;
     border-radius: 5px;
 }
