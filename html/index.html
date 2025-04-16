@@ -14,7 +14,7 @@
     </header>
     <main>
         <div class="container">
-            <h1>Ordem de Serviço Mecânico</h1>
+            <h1>Oficina Reza Que Funciona </h1>
             <form id="formOrdemServico">
                 <div class="form-section">
 
@@ -29,8 +29,7 @@
 
                         <div class="form-group">
                             <label for="telefone">Telefone:</label>
-                            <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" required
-                                pattern="(\([0-9]{2}\)\s([9]{1})?([0-9]{4}))">
+                            <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" required>
                         </div>
 
                         <div class="form-group">
@@ -50,8 +49,18 @@
                     <h2>Dados da motocicleta:</h2>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="veiculoMarca">Marca:</label>
-                            <input type="text" id="veiculoMarca" required>
+                            <label for="tipoServico">Marca:</label>
+                            <select id="tipoServico" required>
+                                <option value="">Selecione...</option>
+                                <option>Honda</option>
+                                <option>Kawasaki</option>
+                                <option>BMW</option>
+                                <option>Yamaha</option>
+                                <option>triumph</option>
+                                <option>Ducati</option>
+                                <option>KTM</option>
+                                <option>Husqvarna</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="veiculoModelo">Modelo:</label>
@@ -73,7 +82,7 @@
                                 <option value="">Selecione...</option>
                                 <option>Revisão Preventiva</option>
                                 <option>Troca de Óleo</option>
-                                <option>Alinhamento/Balanceamento</option>
+                                <option>Limpeza geral</option>
                                 <option>Reparos no Motor</option>
                                 <option>Freios</option>
                             </select>
@@ -87,7 +96,14 @@
                         <label for="descricao">Descrição do Problema:</label>
                         <textarea id="descricao" rows="4" required></textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label for="imagem">Fotos do Serviço:</label>
+                    <input type="file" id="imagem" name="imagem" accept="image/*" multiple required>
+                    <div id="preview" style="margin-top: 10px;"></div>
+                    </div>
                 </div>
+
 
                 <div class="form-section">
                     <div class="checkbox-group">
@@ -97,7 +113,31 @@
                 </div>
 
                 <button type="submit">Enviar Ordem</button>
+
             </form>
+            <script>
+                 const inputImagem = document.getElementById('imagem');
+                    const previewContainer = document.getElementById('preview');
+
+                    inputImagem.addEventListener('change', function(e) {
+                previewContainer.innerHTML = '';
+
+                const arquivos = e.target.files;
+        for (let i = 0; i < arquivos.length; i++) {
+            const arquivo = arquivos[i];
+            const leitor = new FileReader();
+            leitor.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '200px';
+                img.style.display = 'block';
+                img.style.marginTop = '10px';
+                previewContainer.appendChild(img);
+            };
+            leitor.readAsDataURL(arquivo);
+        }
+    });
+            </script>
         </div>
     </main>
 
@@ -105,6 +145,7 @@
     <footer>
     </footer>
 
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
